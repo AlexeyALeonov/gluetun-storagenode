@@ -1,0 +1,25 @@
+version: '3'
+services:
+  storagenode:
+    image: gluetun-storagenode
+    build: .
+    container_name: storagenode
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - OPENVPN_USER=js89ds7
+      - OPENVPN_PASSWORD=8fd9s239G
+      - REGION=AU Melbourne
+      - PORT_FORWARDING=on
+      - WALLET=0x....
+      - EMAIL=a@bc.com
+      - STORAGE=20TB
+    ports:
+      - "14002:14002"
+    # volumes:
+    #   - type: bind
+    #     source: /mnt/storj/storagenode/identity
+    #     destination: /app/identity
+    #   - type: bind
+    #     source: /mnt/storj/storagenode/
+    #     destination: /app/config
