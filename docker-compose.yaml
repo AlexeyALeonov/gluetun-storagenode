@@ -16,10 +16,10 @@ services:
       - STORAGE=20TB
     ports:
       - "14002:14002"
-    # volumes:
-    #   - type: bind
-    #     source: /mnt/storj/storagenode/identity
-    #     destination: /app/identity
-    #   - type: bind
-    #     source: /mnt/storj/storagenode/
-    #     destination: /app/config
+    volumes:
+      - type: bind
+        source: /mnt/storj/storagenode/identity
+        destination: /app/identity
+      - type: bind
+        source: /mnt/storj/storagenode/
+        destination: /app/config
